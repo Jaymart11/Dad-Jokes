@@ -12,11 +12,12 @@ export default class JokeList extends Component {
 
     this.state = {
       jokes: [],
+      loading: false,
     };
   }
 
   componentWillMount() {
-    this.getTenJokes();
+    this.setState({ loading: true }, this.getTenJokes);
   }
 
   async getTenJokes() {
@@ -28,12 +29,13 @@ export default class JokeList extends Component {
       jokes.push({ joke: response.data.joke, vote: 0 });
     }
     this.setState((state) => ({
+      loading: false,
       jokes: [...state.jokes, ...jokes],
     }));
   }
 
   handleClick = () => {
-    this.getTenJokes();
+    this.setState({ loading: true }, this.getTenJokes);
   };
 
   addVote = (index) => {
@@ -62,23 +64,38 @@ export default class JokeList extends Component {
       />
     ));
 
-    return (
-      <div className="JokeList">
-        <div className="JokeTitle">
-          <h1>Dad Jokes</h1>
-          <p>
+    if (this.state.loading) {
+      return (
+        <div className="spinner">
+          <i class="fa fa-spin">
+            {" "}
             <span aria-label="Laugh" role="img">
-              😆
+              😂
             </span>
-          </p>
-          <button className="addJokes" onClick={this.handleClick}>
-            New Jokes
-          </button>
+          </i>
+          <br />
+          <h1>Getting new jokes ... </h1>
         </div>
-        <div className="JokeItems">
-          <ul>{tenJokes}</ul>
+      );
+    } else {
+      return (
+        <div className="JokeList">
+          <div className="JokeTitle">
+            <h1>Dad Jokes</h1>
+            <p>
+              <span aria-label="Laugh" role="img">
+                😆
+              </span>
+            </p>
+            <button className="addJokes" onClick={this.handleClick}>
+              New Jokes
+            </button>
+          </div>
+          <div className="JokeItems">
+            <ul>{tenJokes}</ul>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }

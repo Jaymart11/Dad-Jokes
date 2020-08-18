@@ -116,3 +116,19 @@ p span {
     color: red;
     transition: 300ms all ease-in-out;
 }
+.spinner{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+.fa-spin{
+    font-size: 20rem;
+    animation: fa-spin 1.3s infinite linear;
+}
+span{
+    pointer-events: none;
+}
