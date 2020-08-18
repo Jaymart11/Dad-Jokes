@@ -1,0 +1,118 @@
+.JokeList{
+    height: 100vh;
+    width: 70vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.JokeTitle {
+    width: 15vw;
+    height: 70vh;
+    background-color: rgb(124, 65, 173);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+h1{
+    color: #fff;
+}
+.addJokes{
+    background-image: linear-gradient(140deg,rgb(103, 103, 241) 50%,rgb(185, 84, 84) 50% );
+    border: none;
+    outline: none;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+    color:#fff;
+    font-size: 1.3rem;
+    word-spacing: 1rem;
+    transition: 300ms all ease-in-out;
+}
+.addJokes:hover{
+    background-image: none;
+    background-color: rgb(103, 103, 241);
+    transition: 200ms all ease-in-out;
+}
+
+.JokeItems{
+    background-color: #fff;
+    width: 50vw;
+    height: 60vh;
+    overflow:auto;
+}
+.JokeItems::-webkit-scrollbar {
+    width: 0px; 
+}
+ul{
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+li{
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px black solid;
+}
+
+.Votes{
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid transparent;
+}
+.voting{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    transition: 300ms all ease-in-out;
+}
+.negative {
+    border: 3px solid red;
+}
+.happy {
+    border: 3px solid #7DAA6A;
+}
+.laugh {
+    border:3px solid #E1C158;
+}
+.rofl {
+    border: 3px solid #B29700;
+}
+h3{
+    font-size: 3rem;
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+p span {
+    font-size: 10rem;
+    background-color: rgb(59, 20, 92);
+    border-radius: 100%;
+}
+.up:hover{
+    color:green;
+    transition: 300ms all ease-in-out;
+}
+.down:hover{
+    color: red;
+    transition: 300ms all ease-in-out;
+}
